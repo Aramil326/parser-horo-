@@ -6,6 +6,21 @@ const scrapeAll = require('./pageController');
 let browserInstance = browserObject.startBrowser();
 
 // Pass the browser instance to the scraper controller
-let obj = scrapeAll(browserInstance)
+scrapeAll(browserInstance).then(obj => { console.log(obj) })
 
-console.log(obj)
+
+
+
+
+// const dayOfBirth = document.querySelector('.input'),
+//   today = document.querySelector('input[value="today"]'),
+//   tommorow = document.querySelector('input[value="tommorow"]'),
+//   dayAfterTomorrow = document.querySelector('input[value="day-after-tomorrow"]'),
+//   submit = document.querySelector('input[type="submit"]')
+
+// submit.addEventListener('click', () => {
+//   console.log(dayOfBirth.textContent)
+//   console.log(today.checked)
+//   console.log(today.tommorow)
+//   console.log(today.dayAfterTomorrow)
+// })

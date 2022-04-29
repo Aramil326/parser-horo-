@@ -19,7 +19,7 @@ const scraperObject = {
       let dataObj = {};
       let newPage = await browser.newPage();
       await newPage.goto(link);
-      dataObj['prediction_&_day'] = await newPage.$eval('.hdr__inner', text => text.textContent);
+      dataObj['day_&_prediction'] = await newPage.$eval('.hdr__inner', text => text.textContent);
       dataObj['paragraph_1'] = await newPage.$eval('div > div > div > div > p', text => text.textContent);
       dataObj['paragraph_2'] = await newPage.$eval('div > div > div > div > p ~ p', text => text.textContent);
       resolve(dataObj);
