@@ -11,6 +11,7 @@ const scraperObject = {
     let urls = await page.$$eval('div > div > div > div >a', links => {
       links = links.filter(link => link.getAttribute('data-logger') === "horo__ZodiacSign")
       links = links.map(el => el.href)
+      links = links.map(el => el.substr(0, el.length - 6) + 'week/')
       return links;
     });
 
